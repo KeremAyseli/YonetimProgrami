@@ -33,6 +33,7 @@
             this.ÜrünKod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Üretici = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Adet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Fiyat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.AramaUrunId = new System.Windows.Forms.TextBox();
             this.UrunKodKayit = new System.Windows.Forms.TextBox();
@@ -54,6 +55,10 @@
             this.SilmeButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.SilmeTextBox = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.UrunFiyat = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listView1
@@ -65,7 +70,8 @@
             this.Ürünİd,
             this.ÜrünKod,
             this.Üretici,
-            this.Adet});
+            this.Adet,
+            this.Fiyat});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(10, 281);
             this.listView1.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
@@ -94,6 +100,11 @@
             // 
             this.Adet.Text = "Adet";
             this.Adet.Width = 120;
+            // 
+            // Fiyat
+            // 
+            this.Fiyat.Text = "Fİyat";
+            this.Fiyat.Width = 81;
             // 
             // button1
             // 
@@ -145,7 +156,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 49);
+            this.label2.Location = new System.Drawing.Point(52, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 7;
@@ -154,7 +165,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 92);
+            this.label3.Location = new System.Drawing.Point(52, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 8;
@@ -163,7 +174,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 129);
+            this.label4.Location = new System.Drawing.Point(52, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 9;
@@ -181,7 +192,7 @@
             // 
             // KayıtGirmeButonu
             // 
-            this.KayıtGirmeButonu.Location = new System.Drawing.Point(86, 166);
+            this.KayıtGirmeButonu.Location = new System.Drawing.Point(87, 203);
             this.KayıtGirmeButonu.Name = "KayıtGirmeButonu";
             this.KayıtGirmeButonu.Size = new System.Drawing.Size(75, 23);
             this.KayıtGirmeButonu.TabIndex = 11;
@@ -274,12 +285,52 @@
             this.SilmeTextBox.Size = new System.Drawing.Size(100, 20);
             this.SilmeTextBox.TabIndex = 21;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(28, 252);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(111, 23);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Listeyi Temizle";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(573, 252);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(119, 23);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "İrsaliye Bas";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(52, 161);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 13);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Fiyat";
+            // 
+            // UrunFiyat
+            // 
+            this.UrunFiyat.Location = new System.Drawing.Point(123, 158);
+            this.UrunFiyat.Name = "UrunFiyat";
+            this.UrunFiyat.Size = new System.Drawing.Size(100, 20);
+            this.UrunFiyat.TabIndex = 25;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1082, 515);
+            this.Controls.Add(this.UrunFiyat);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.SilmeTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.SilmeButton);
@@ -340,6 +391,11 @@
         private System.Windows.Forms.Button SilmeButton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox SilmeTextBox;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox UrunFiyat;
+        private System.Windows.Forms.ColumnHeader Fiyat;
     }
 }
 

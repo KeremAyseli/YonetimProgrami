@@ -23,7 +23,7 @@ namespace YönetimProgramı
         
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,10 +35,12 @@ namespace YönetimProgramı
                 deger.SubItems.Add(vt.EldekiUrun.ToList()[i].ürünKod.ToString());
                 deger.SubItems.Add(vt.EldekiUrun.ToList()[i].üretici.ToString());
                 deger.SubItems.Add(vt.EldekiUrun.ToList()[i].ürünAdet.ToString());
+                deger.SubItems.Add(vt.EldekiUrun.ToList()[i].fiyat.ToString());
                 Console.WriteLine(vt.EldekiUrun.ToList()[i].üretici.ToString());
                 Console.WriteLine(vt.EldekiUrun.ToList()[i].ürünAdet.ToString());
                 Console.WriteLine(vt.EldekiUrun.ToList()[i].ürünKod.ToString());
                 Console.WriteLine(vt.EldekiUrun.ToList()[i].ürünİd.ToString());
+                Console.WriteLine(vt.EldekiUrun.ToList()[i].fiyat.ToString());
                 listView1.Items.Add(deger);
             }
         }
@@ -50,7 +52,7 @@ namespace YönetimProgramı
             urunler.üretici = UreticiKayit.Text; 
             urunler.ürünAdet = Convert.ToInt32(AdetKayit.Text);
             urunler.ürünKod =Convert.ToInt32(UrunKodKayit.Text);
-
+            urunler.fiyat = Convert.ToInt32(UrunFiyat.Text);
             vt.EldekiUrun.Add(urunler);
             vt.SaveChanges();
         }
@@ -78,6 +80,7 @@ namespace YönetimProgramı
                 GelenDegerler.SubItems.Add(veriler[i].ürünKod.ToString());
                 GelenDegerler.SubItems.Add(veriler[i].üretici.ToString());
                 GelenDegerler.SubItems.Add(veriler[i].ürünAdet.ToString());
+                GelenDegerler.SubItems.Add(veriler[i].fiyat.ToString());
 
                 listView.Items.Add(GelenDegerler); listView.ForeColor = renk;
             }
@@ -96,6 +99,18 @@ namespace YönetimProgramı
             int silmeId = Convert.ToInt32(SilmeTextBox.Text);
             vt.EldekiUrun.Remove(vt.EldekiUrun.Single(r => r.ürünİd == silmeId));
             vt.SaveChanges();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            İrsaliyeBasmaEkranı form = new İrsaliyeBasmaEkranı();
+            form.Show();
+            
         }
     }
 }

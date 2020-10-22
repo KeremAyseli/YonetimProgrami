@@ -19,5 +19,7 @@ namespace YönetimProgramı
 
        public string üretici { get; set; }
 
+        public int fiyat { get; set; }
+
     }
 }
