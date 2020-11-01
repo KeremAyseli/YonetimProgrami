@@ -27,14 +27,37 @@ namespace YönetimProgramı
 
         }
         PdfAyarlar ayar = new PdfAyarlar();
+        public void JsonGüncelleme(string Sütunİsmi,string YeniVeri)
+        {
+            string json = File.ReadAllText(Environment.CurrentDirectory + @"\Ayarlar\ayar.json");
+            dynamic dosya = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+            dosya[Sütunİsmi] = YeniVeri;
+            string output = Newtonsoft.Json.JsonConvert.SerializeObject(dosya, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(Environment.CurrentDirectory + @"\Ayarlar\ayar.json", output);
+        }
         private void button3_Click(object sender, EventArgs e)
         {
 
-            string json = File.ReadAllText(Environment.CurrentDirectory + @"\Ayarlar\ayar.json");
-            dynamic dosya = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-            dosya["DosyaYolu"] = "deneme2";
-            string output = Newtonsoft.Json.JsonConvert.SerializeObject(dosya, Newtonsoft.Json.Formatting.Indented);
-            File.WriteAllText(Environment.CurrentDirectory + @"\Ayarlar\ayar.json", output);
+            if (checkBox1.Checked == true)
+            {
+                
+                JsonGüncelleme("DosyaYolu", textBox1.Text);
+            }
+            if (checkBox2.Checked == true)
+            {
+                
+                JsonGüncelleme("ResimYolu", textBox2.Text);
+            }
+            if (checkBox3.Checked == true)
+            {
+                
+                JsonGüncelleme("IsyeriIsmi", textBox3.Text);
+            }
+            if (checkBox4.Checked == true)
+            {
+               
+                JsonGüncelleme("Adres", textBox4.Text);
+            }
                  
             
            
@@ -44,7 +67,7 @@ namespace YönetimProgramı
 
         private void pdfBastırmaAyarEkranı_Load(object sender, EventArgs e)
         {
-
+       
         }
         
         private void pdfBastırmaAyarEkranı_MouseDown(object sender, MouseEventArgs e)
