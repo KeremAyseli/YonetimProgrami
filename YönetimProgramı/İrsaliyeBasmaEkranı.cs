@@ -21,6 +21,7 @@ namespace YönetimProgramı
         {
             InitializeComponent();
         }
+        ArayuzHareketleri arayüz = new ArayuzHareketleri();
         List<EldekiUrun> eldekiürünler=new List<EldekiUrun>();
         int toplamFiyat = 0;
         VeriTabanı vt = new VeriTabanı();
@@ -214,10 +215,32 @@ namespace YönetimProgramı
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            pdfBastırmaAyarEkranı ayarEkranı = new pdfBastırmaAyarEkranı();
+            ayarEkranı.Show();
         }
 
         private void button3_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void İrsaliyeBasmaEkranı_MouseDown(object sender, MouseEventArgs e)
+        {
+            arayüz.FormuSurukle(this, e);
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            arayüz.FormuSurukle(this, e);
+        }
+
+        private void İrsaliyeBasmaEkranı_Load(object sender, EventArgs e)
         {
 
         }

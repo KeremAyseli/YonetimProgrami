@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listView1 = new System.Windows.Forms.ListView();
             this.Ürünİd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ÜrünKod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Üretici = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Adet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Fiyat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
             this.AramaUrunId = new System.Windows.Forms.TextBox();
             this.UrunKodKayit = new System.Windows.Forms.TextBox();
             this.UreticiKayit = new System.Windows.Forms.TextBox();
@@ -48,296 +48,332 @@
             this.label5 = new System.Windows.Forms.Label();
             this.AramaUrunKod = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.GuncellemeId = new System.Windows.Forms.TextBox();
+            this.IdGüncelleme = new System.Windows.Forms.TextBox();
             this.GüncellemButonu = new System.Windows.Forms.Button();
             this.AdetGuncelleme = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.SilmeButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.SilmeTextBox = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.UrunFiyat = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ÜreticiGüncelleme = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.FiyatGüncelleme = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(107)))));
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Ürünİd,
             this.ÜrünKod,
             this.Üretici,
             this.Adet,
             this.Fiyat});
+            resources.ApplyResources(this.listView1, "listView1");
+            this.listView1.ForeColor = System.Drawing.Color.White;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(10, 281);
-            this.listView1.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1060, 222);
-            this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // Ürünİd
             // 
-            this.Ürünİd.Text = "Ürünİd";
-            this.Ürünİd.Width = 120;
+            resources.ApplyResources(this.Ürünİd, "Ürünİd");
             // 
             // ÜrünKod
             // 
-            this.ÜrünKod.Text = "ÜrünKod";
-            this.ÜrünKod.Width = 120;
+            resources.ApplyResources(this.ÜrünKod, "ÜrünKod");
             // 
             // Üretici
             // 
-            this.Üretici.Text = "Üretici";
-            this.Üretici.Width = 120;
+            resources.ApplyResources(this.Üretici, "Üretici");
             // 
             // Adet
             // 
-            this.Adet.Text = "Adet";
-            this.Adet.Width = 120;
+            resources.ApplyResources(this.Adet, "Adet");
             // 
             // Fiyat
             // 
-            this.Fiyat.Text = "Fİyat";
-            this.Fiyat.Width = 81;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(920, 252);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Listele";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.Fiyat, "Fiyat");
             // 
             // AramaUrunId
             // 
-            this.AramaUrunId.Location = new System.Drawing.Point(951, 49);
+            this.AramaUrunId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(107)))));
+            this.AramaUrunId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.AramaUrunId, "AramaUrunId");
+            this.AramaUrunId.ForeColor = System.Drawing.Color.White;
             this.AramaUrunId.Name = "AramaUrunId";
-            this.AramaUrunId.Size = new System.Drawing.Size(100, 20);
-            this.AramaUrunId.TabIndex = 2;
             // 
             // UrunKodKayit
             // 
-            this.UrunKodKayit.Location = new System.Drawing.Point(123, 46);
+            this.UrunKodKayit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(107)))));
+            this.UrunKodKayit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.UrunKodKayit, "UrunKodKayit");
+            this.UrunKodKayit.ForeColor = System.Drawing.Color.White;
             this.UrunKodKayit.Name = "UrunKodKayit";
-            this.UrunKodKayit.Size = new System.Drawing.Size(100, 20);
-            this.UrunKodKayit.TabIndex = 3;
             // 
             // UreticiKayit
             // 
-            this.UreticiKayit.Location = new System.Drawing.Point(123, 85);
+            this.UreticiKayit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(107)))));
+            this.UreticiKayit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.UreticiKayit, "UreticiKayit");
+            this.UreticiKayit.ForeColor = System.Drawing.Color.White;
             this.UreticiKayit.Name = "UreticiKayit";
-            this.UreticiKayit.Size = new System.Drawing.Size(100, 20);
-            this.UreticiKayit.TabIndex = 4;
             // 
             // AdetKayit
             // 
-            this.AdetKayit.Location = new System.Drawing.Point(123, 122);
+            this.AdetKayit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(107)))));
+            this.AdetKayit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.AdetKayit, "AdetKayit");
+            this.AdetKayit.ForeColor = System.Drawing.Color.White;
             this.AdetKayit.Name = "AdetKayit";
-            this.AdetKayit.Size = new System.Drawing.Size(100, 20);
-            this.AdetKayit.TabIndex = 5;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(872, 55);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "ÜrünId";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 48);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "ÜrünKod";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 92);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Üretici";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(52, 122);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Adet";
             // 
             // AramaButonu
             // 
-            this.AramaButonu.Location = new System.Drawing.Point(961, 129);
+            this.AramaButonu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
+            resources.ApplyResources(this.AramaButonu, "AramaButonu");
+            this.AramaButonu.ForeColor = System.Drawing.Color.White;
             this.AramaButonu.Name = "AramaButonu";
-            this.AramaButonu.Size = new System.Drawing.Size(75, 23);
-            this.AramaButonu.TabIndex = 10;
-            this.AramaButonu.Text = "Bul";
-            this.AramaButonu.UseVisualStyleBackColor = true;
+            this.AramaButonu.UseVisualStyleBackColor = false;
             this.AramaButonu.Click += new System.EventHandler(this.button2_Click);
             // 
             // KayıtGirmeButonu
             // 
-            this.KayıtGirmeButonu.Location = new System.Drawing.Point(87, 203);
+            this.KayıtGirmeButonu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
+            resources.ApplyResources(this.KayıtGirmeButonu, "KayıtGirmeButonu");
+            this.KayıtGirmeButonu.ForeColor = System.Drawing.Color.White;
             this.KayıtGirmeButonu.Name = "KayıtGirmeButonu";
-            this.KayıtGirmeButonu.Size = new System.Drawing.Size(75, 23);
-            this.KayıtGirmeButonu.TabIndex = 11;
-            this.KayıtGirmeButonu.Text = "Kayıt Gir";
-            this.KayıtGirmeButonu.UseVisualStyleBackColor = true;
+            this.KayıtGirmeButonu.UseVisualStyleBackColor = false;
             this.KayıtGirmeButonu.Click += new System.EventHandler(this.button3_Click);
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(872, 88);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "ÜrünKod";
             // 
             // AramaUrunKod
             // 
-            this.AramaUrunKod.Location = new System.Drawing.Point(951, 85);
+            this.AramaUrunKod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(107)))));
+            this.AramaUrunKod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.AramaUrunKod, "AramaUrunKod");
+            this.AramaUrunKod.ForeColor = System.Drawing.Color.White;
             this.AramaUrunKod.Name = "AramaUrunKod";
-            this.AramaUrunKod.Size = new System.Drawing.Size(100, 20);
-            this.AramaUrunKod.TabIndex = 12;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(359, 48);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(16, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Id";
             // 
-            // GuncellemeId
+            // IdGüncelleme
             // 
-            this.GuncellemeId.Location = new System.Drawing.Point(382, 46);
-            this.GuncellemeId.Name = "GuncellemeId";
-            this.GuncellemeId.Size = new System.Drawing.Size(100, 20);
-            this.GuncellemeId.TabIndex = 15;
+            this.IdGüncelleme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(107)))));
+            this.IdGüncelleme.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.IdGüncelleme, "IdGüncelleme");
+            this.IdGüncelleme.ForeColor = System.Drawing.Color.White;
+            this.IdGüncelleme.Name = "IdGüncelleme";
             // 
             // GüncellemButonu
             // 
-            this.GüncellemButonu.Location = new System.Drawing.Point(393, 124);
+            this.GüncellemButonu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
+            resources.ApplyResources(this.GüncellemButonu, "GüncellemButonu");
+            this.GüncellemButonu.ForeColor = System.Drawing.Color.White;
             this.GüncellemButonu.Name = "GüncellemButonu";
-            this.GüncellemButonu.Size = new System.Drawing.Size(75, 23);
-            this.GüncellemButonu.TabIndex = 16;
-            this.GüncellemButonu.Text = "Güncelle";
-            this.GüncellemButonu.UseVisualStyleBackColor = true;
+            this.GüncellemButonu.UseVisualStyleBackColor = false;
             this.GüncellemButonu.Click += new System.EventHandler(this.GüncellemButonu_Click);
             // 
             // AdetGuncelleme
             // 
-            this.AdetGuncelleme.Location = new System.Drawing.Point(384, 81);
+            this.AdetGuncelleme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(107)))));
+            this.AdetGuncelleme.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.AdetGuncelleme, "AdetGuncelleme");
+            this.AdetGuncelleme.ForeColor = System.Drawing.Color.White;
             this.AdetGuncelleme.Name = "AdetGuncelleme";
-            this.AdetGuncelleme.Size = new System.Drawing.Size(100, 20);
-            this.AdetGuncelleme.TabIndex = 17;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(350, 88);
+            resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Adet";
             // 
             // SilmeButton
             // 
-            this.SilmeButton.Location = new System.Drawing.Point(667, 74);
+            this.SilmeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
+            resources.ApplyResources(this.SilmeButton, "SilmeButton");
+            this.SilmeButton.ForeColor = System.Drawing.Color.White;
             this.SilmeButton.Name = "SilmeButton";
-            this.SilmeButton.Size = new System.Drawing.Size(75, 23);
-            this.SilmeButton.TabIndex = 19;
-            this.SilmeButton.Text = "Sil";
-            this.SilmeButton.UseVisualStyleBackColor = true;
+            this.SilmeButton.UseVisualStyleBackColor = false;
             this.SilmeButton.Click += new System.EventHandler(this.SilmeButton_Click);
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(587, 52);
+            resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 13);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Silinecek Id";
             // 
             // SilmeTextBox
             // 
-            this.SilmeTextBox.Location = new System.Drawing.Point(655, 48);
+            this.SilmeTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(107)))));
+            this.SilmeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.SilmeTextBox, "SilmeTextBox");
+            this.SilmeTextBox.ForeColor = System.Drawing.Color.White;
             this.SilmeTextBox.Name = "SilmeTextBox";
-            this.SilmeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.SilmeTextBox.TabIndex = 21;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(28, 252);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 23);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Listeyi Temizle";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(573, 252);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(119, 23);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "İrsaliye Bas";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(52, 161);
+            resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(29, 13);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Fiyat";
             // 
             // UrunFiyat
             // 
-            this.UrunFiyat.Location = new System.Drawing.Point(123, 158);
+            this.UrunFiyat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(107)))));
+            this.UrunFiyat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.UrunFiyat, "UrunFiyat");
+            this.UrunFiyat.ForeColor = System.Drawing.Color.White;
             this.UrunFiyat.Name = "UrunFiyat";
-            this.UrunFiyat.Size = new System.Drawing.Size(100, 20);
-            this.UrunFiyat.TabIndex = 25;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(117)))), ((int)(((byte)(130)))));
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button5);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
+            resources.ApplyResources(this.button4, "button4");
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(96)))), ((int)(((byte)(92)))));
+            this.button4.Name = "button4";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.MouseEnter += new System.EventHandler(this.button4_MouseEnter);
+            this.button4.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(140)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.button5, "button5");
+            this.button5.Name = "button5";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.MouseEnter += new System.EventHandler(this.button5_MouseEnter);
+            this.button5.MouseLeave += new System.EventHandler(this.button5_MouseLeave);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(18)))), ((int)(((byte)(19)))));
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.button2);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
+            // ÜreticiGüncelleme
+            // 
+            this.ÜreticiGüncelleme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(107)))));
+            this.ÜreticiGüncelleme.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.ÜreticiGüncelleme, "ÜreticiGüncelleme");
+            this.ÜreticiGüncelleme.ForeColor = System.Drawing.Color.White;
+            this.ÜreticiGüncelleme.Name = "ÜreticiGüncelleme";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // FiyatGüncelleme
+            // 
+            this.FiyatGüncelleme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(99)))), ((int)(((byte)(107)))));
+            this.FiyatGüncelleme.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.FiyatGüncelleme, "FiyatGüncelleme");
+            this.FiyatGüncelleme.ForeColor = System.Drawing.Color.White;
+            this.FiyatGüncelleme.Name = "FiyatGüncelleme";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1082, 515);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(58)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.FiyatGüncelleme);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.ÜreticiGüncelleme);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.UrunFiyat);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.SilmeTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.SilmeButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.AdetGuncelleme);
             this.Controls.Add(this.GüncellemButonu);
-            this.Controls.Add(this.GuncellemeId);
+            this.Controls.Add(this.IdGüncelleme);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.AramaUrunKod);
@@ -351,13 +387,15 @@
             this.Controls.Add(this.UreticiKayit);
             this.Controls.Add(this.UrunKodKayit);
             this.Controls.Add(this.AramaUrunId);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,7 +408,6 @@
         private System.Windows.Forms.ColumnHeader ÜrünKod;
         private System.Windows.Forms.ColumnHeader Üretici;
         private System.Windows.Forms.ColumnHeader Adet;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox AramaUrunId;
         private System.Windows.Forms.TextBox UrunKodKayit;
         private System.Windows.Forms.TextBox UreticiKayit;
@@ -384,18 +421,27 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox AramaUrunKod;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox GuncellemeId;
+        private System.Windows.Forms.TextBox IdGüncelleme;
         private System.Windows.Forms.Button GüncellemButonu;
         private System.Windows.Forms.TextBox AdetGuncelleme;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button SilmeButton;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox SilmeTextBox;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox UrunFiyat;
         private System.Windows.Forms.ColumnHeader Fiyat;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox ÜreticiGüncelleme;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox FiyatGüncelleme;
     }
 }
 

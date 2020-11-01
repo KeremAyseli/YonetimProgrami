@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.Remoting.Lifetime;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace YönetimProgramı
@@ -88,7 +89,7 @@ namespace YönetimProgramı
 
         private void GüncellemButonu_Click(object sender, EventArgs e)
         {
-            int guncellemeId =Convert.ToInt32( GuncellemeId.Text);
+            int guncellemeId =Convert.ToInt32( IdGüncelleme.Text);
             var güncelle = vt.EldekiUrun.First(r => r.ürünİd == guncellemeId);
             güncelle.ürünAdet=Convert.ToInt32(AdetGuncelleme.Text);
             vt.SaveChanges();
@@ -111,6 +112,59 @@ namespace YönetimProgramı
             İrsaliyeBasmaEkranı form = new İrsaliyeBasmaEkranı();
             form.Show();
             
+        }
+        public const int WM_NCLBUTTONDOWN = 0XA1;
+        public const int HT_CAPTION = 0X2;
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int ReleaseCapture();
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_MouseEnter(object sender, EventArgs e)
+        {
+            button4.BackColor = Color.FromArgb(255,0,0);
+        }
+
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+            button4.BackColor = Color.FromArgb(255, 102, 0);
+        }
+
+        private void button5_MouseEnter(object sender, EventArgs e)
+        {
+            button5.BackColor = Color.FromArgb(0, 8, 255);
+        }
+
+        private void button5_MouseLeave(object sender, EventArgs e)
+        {
+            button5.BackColor = Color.FromArgb(0, 140, 255);
         }
     }
 }
