@@ -17,6 +17,7 @@ namespace YönetimProgramı
         {
             InitializeComponent();
         }
+        string DosyaYolu;
         ArayuzHareketleri arayuz = new ArayuzHareketleri();
         struct PdfAyarlar
         {
@@ -46,7 +47,7 @@ namespace YönetimProgramı
             if (checkBox2.Checked == true)
             {
                 
-                JsonGüncelleme("ResimYolu", textBox2.Text);
+                JsonGüncelleme("ResimYolu", DosyaYolu);
             }
             if (checkBox3.Checked == true)
             {
@@ -57,12 +58,7 @@ namespace YönetimProgramı
             {
                
                 JsonGüncelleme("Adres", textBox4.Text);
-            }
-                 
-            
-           
-                
-            
+            }  
         }
 
         private void pdfBastırmaAyarEkranı_Load(object sender, EventArgs e)
@@ -88,6 +84,12 @@ namespace YönetimProgramı
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.ShowDialog();
+            DosyaYolu = folderBrowserDialog1.SelectedPath;
         }
     }
 }
