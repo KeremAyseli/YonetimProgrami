@@ -71,7 +71,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArayuzHareketleri.cs" />
+    <Compile Include="Ayarlar.cs" />
     <Compile Include="EldekiUrun.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

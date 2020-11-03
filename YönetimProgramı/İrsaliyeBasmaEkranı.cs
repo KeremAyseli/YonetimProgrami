@@ -12,6 +12,8 @@ using iTextSharp.text.pdf;
 using iTextSharp.text;
 using System.Diagnostics;
 using Microsoft.Win32;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace YönetimProgramı
 {
@@ -21,18 +23,19 @@ namespace YönetimProgramı
         {
             InitializeComponent();
         }
-        ArayuzHareketleri arayüz = new ArayuzHareketleri();
+        Ayarlar arayüz = new Ayarlar();
         List<EldekiUrun> eldekiürünler=new List<EldekiUrun>();
         int toplamFiyat = 0;
         VeriTabanı vt = new VeriTabanı();
         public string yolPdf { get; set; }
+        
         private void button1_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(textBox1.Text)==false)
             {
                 yolPdf = textBox1.Text;
 
-                DökümanOlusturma(textBox1.Text, eldekiürünler, toplamFiyat);
+                DökümanOlusturma(textBox1.Text, eldekiürünler, toplamFiyat,arayüz.ResimYoluGetir(),arayüz.AdresGetir(),arayüz.IsyeriIsmıGetir());
 
                 if (AdobeKontrol() == true)
                 {
@@ -45,7 +48,7 @@ namespace YönetimProgramı
                     Process islem = new Process();
                     islem.StartInfo = new ProcessStartInfo()
                     {
-                        FileName = Environment.CurrentDirectory + @"\" + textBox1.Text + ".pdf"
+                        FileName = arayüz.DosyaYoluGetir()+ @"\" + textBox1.Text + ".pdf"
                     };
                     islem.Start();
                 }
@@ -56,24 +59,32 @@ namespace YönetimProgramı
             }
 
         }
-        private void DökümanOlusturma(string pdfİsmi, List<EldekiUrun> kimlik, int toplamfiyat)
+        private void DökümanOlusturma(string pdfİsmi, List<EldekiUrun> kimlik, int toplamfiyat,string resimYolu,string firmaAdres,string firmaİsmi)
         {
-            using (System.IO.FileStream bellek = new System.IO.FileStream(@"./" + pdfİsmi + ".pdf", System.IO.FileMode.OpenOrCreate))
+            Console.WriteLine(@"pdf konum: " + arayüz.DosyaYoluGetir() +@"\"+ pdfİsmi + ".pdf");
+            using (System.IO.FileStream bellek = new System.IO.FileStream(@arayüz.DosyaYoluGetir() +@"\"+ pdfİsmi + ".pdf", System.IO.FileMode.OpenOrCreate))
             {
                 Document döküman = new Document(PageSize.A4, 10, 10, 10, 10);
                 PdfWriter yazıcı = PdfWriter.GetInstance(döküman, bellek);
 
                 döküman.Open();
 
-                Chunk chunk = new Chunk("bu ne 1");
+                Chunk chunk = new Chunk(firmaİsmi);
                 chunk.SetUnderline(150f, 150f);
 
                 Paragraph paragraf = new Paragraph();
-                paragraf.Add("MERHABA BU PARAGRAF DENEMESI");
+                paragraf.Add(firmaAdres);
+                
+               var resimler= System.Drawing.Image.FromFile(@"‪C:\Users\aysel\Desktop\ElceSBHX0AAshJO.jpeg");
+
+                iTextSharp.text.Image resim = iTextSharp.text.Image.GetInstance(resimler,System.Drawing.Imaging.ImageFormat.Jpeg);
+               
+
                 Paragraph p = new Paragraph(new Chunk(new iTextSharp.text.pdf.draw.LineSeparator(0.0F, 100.0F, BaseColor.BLACK, Element.ALIGN_LEFT, 1)));
                 Paragraph baslik = new Paragraph(new Phrase("               Ürün Açıklama                                                                  Ürün Adet                       ürün fiyat"));
                 Paragraph fiyat = new Paragraph(new Phrase("Toplam Fiyat: " + toplamFiyat + "TL"));
                 fiyat.Alignment = Element.ALIGN_RIGHT;
+                döküman.Add(resim);
                 döküman.Add(paragraf);
                 döküman.Add(chunk);
                 döküman.Add(baslik);

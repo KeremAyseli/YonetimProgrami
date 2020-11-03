@@ -18,16 +18,10 @@ namespace YönetimProgramı
             InitializeComponent();
         }
         string DosyaYolu;
-        ArayuzHareketleri arayuz = new ArayuzHareketleri();
-        struct PdfAyarlar
-        {
-          public string DosyaYolu;
-          public string ResimYolu;
-          public string IsyeriIsmi;
-          public string Adres;
-
-        }
-        PdfAyarlar ayar = new PdfAyarlar();
+        string resimDosyaYolu;
+        Ayarlar arayuz = new Ayarlar();
+       
+        
         public void JsonGüncelleme(string Sütunİsmi,string YeniVeri)
         {
             string json = File.ReadAllText(Environment.CurrentDirectory + @"\Ayarlar\ayar.json");
@@ -38,16 +32,16 @@ namespace YönetimProgramı
         }
         private void button3_Click(object sender, EventArgs e)
         {
-
+            
             if (checkBox1.Checked == true)
             {
                 
-                JsonGüncelleme("DosyaYolu", textBox1.Text);
+                JsonGüncelleme("DosyaYolu", DosyaYolu);
             }
             if (checkBox2.Checked == true)
             {
                 
-                JsonGüncelleme("ResimYolu", DosyaYolu);
+                JsonGüncelleme("ResimYolu", resimDosyaYolu);
             }
             if (checkBox3.Checked == true)
             {
@@ -87,6 +81,14 @@ namespace YönetimProgramı
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {openFileDialog1.ShowDialog();
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                resimDosyaYolu = openFileDialog1.FileName.ToString();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
             folderBrowserDialog1.ShowDialog();
             DosyaYolu = folderBrowserDialog1.SelectedPath;

@@ -17,12 +17,13 @@ namespace YönetimProgramı
             InitializeComponent();
         }
         public string pdfYol { get; set; }
+        Ayarlar arayüz = new Ayarlar();
         private void PdfGosterme_Load(object sender, EventArgs e)
         {
             try
             {
-                axAcroPDF1.LoadFile(Environment.CurrentDirectory + @"\" + pdfYol + ".pdf");
-                axAcroPDF1.src = Environment.CurrentDirectory + @"\" + pdfYol + ".pdf";
+                axAcroPDF1.LoadFile(arayüz.DosyaYoluGetir() + @"\" + pdfYol + ".pdf");
+                axAcroPDF1.src = arayüz.DosyaYoluGetir() + @"\" + pdfYol + ".pdf";
                 axAcroPDF1.printAll();
                
                 
@@ -38,6 +39,11 @@ namespace YönetimProgramı
         private void button1_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void axAcroPDF1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
