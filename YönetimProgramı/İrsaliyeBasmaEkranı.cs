@@ -75,7 +75,6 @@ namespace YönetimProgramı
                 Paragraph paragraf = new Paragraph();
                 paragraf.Add(firmaAdres);
                
-
                
 
                 iTextSharp.text.Image resim = iTextSharp.text.Image.GetInstance(resimYolu);
@@ -87,8 +86,7 @@ namespace YönetimProgramı
                 Paragraph fiyat = new Paragraph(new Phrase("Toplam Fiyat: " + toplamFiyat + "TL"));
                 fiyat.Alignment = Element.ALIGN_RIGHT;
                 döküman.Add(resim);
-                
-                döküman.Add(chunk);
+                döküman.Add(paragraf);
                 döküman.Add(baslik);
                 döküman.Add(p);
                 Random rastgele = new Random();
@@ -96,7 +94,7 @@ namespace YönetimProgramı
                 { döküman.Add(hücre(kimlik[i].ürünKod.ToString(), kimlik[i].fiyat + " TL", kimlik[i].ürünAdet)); Console.WriteLine(kimlik[i].ürünAdet + "    " + kimlik[i].fiyat); }
                 döküman.Add(p);
                 döküman.Add(fiyat);
-                döküman.Add(paragraf);              
+                döküman.Add(chunk);              
                 döküman.Close();
                 yazıcı.Close();
                 bellek.Close();
