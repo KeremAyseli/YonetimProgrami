@@ -74,18 +74,20 @@ namespace YönetimProgramı
 
                 Paragraph paragraf = new Paragraph();
                 paragraf.Add(firmaAdres);
-                
-               var resimler= System.Drawing.Image.FromFile(@"‪C:\Users\aysel\Desktop\ElceSBHX0AAshJO.jpeg");
-
-                iTextSharp.text.Image resim = iTextSharp.text.Image.GetInstance(resimler,System.Drawing.Imaging.ImageFormat.Jpeg);
                
+
+               
+
+                iTextSharp.text.Image resim = iTextSharp.text.Image.GetInstance(resimYolu);
+                resim.ScaleToFit(50f, 50f);
+                
 
                 Paragraph p = new Paragraph(new Chunk(new iTextSharp.text.pdf.draw.LineSeparator(0.0F, 100.0F, BaseColor.BLACK, Element.ALIGN_LEFT, 1)));
                 Paragraph baslik = new Paragraph(new Phrase("               Ürün Açıklama                                                                  Ürün Adet                       ürün fiyat"));
                 Paragraph fiyat = new Paragraph(new Phrase("Toplam Fiyat: " + toplamFiyat + "TL"));
                 fiyat.Alignment = Element.ALIGN_RIGHT;
                 döküman.Add(resim);
-                döküman.Add(paragraf);
+                
                 döküman.Add(chunk);
                 döküman.Add(baslik);
                 döküman.Add(p);
@@ -94,7 +96,7 @@ namespace YönetimProgramı
                 { döküman.Add(hücre(kimlik[i].ürünKod.ToString(), kimlik[i].fiyat + " TL", kimlik[i].ürünAdet)); Console.WriteLine(kimlik[i].ürünAdet + "    " + kimlik[i].fiyat); }
                 döküman.Add(p);
                 döküman.Add(fiyat);
-
+                döküman.Add(paragraf);              
                 döküman.Close();
                 yazıcı.Close();
                 bellek.Close();

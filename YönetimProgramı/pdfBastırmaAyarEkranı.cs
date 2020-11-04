@@ -81,7 +81,7 @@ namespace YönetimProgramı
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {openFileDialog1.ShowDialog();
+        {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 resimDosyaYolu = openFileDialog1.FileName.ToString();
